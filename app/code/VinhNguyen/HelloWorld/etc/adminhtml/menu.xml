@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=
+        "urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="VinhNguyen_HelloWorld::helloworld"
+                title="HelloWorld"
+                module="VinhNguyen_HelloWorld"
+                sortOrder="50"
+                parent="Magento_Backend::marketing"
+                resource="VinhNguyen_HelloWorld::helloworld"
+        />
+        <add
+                id="VinhNguyen_HelloWorld::index"
+                title="Helloworld Index"
+                module="VinhNguyen_HelloWorld"
+                sortOrder="55"
+                parent="VinhNguyen_HelloWorld::helloworld"
+                action="helloworld/index/"
+                resource="VinhNguyen_HelloWorld::index"
+        />
+        <add
+                id="VinhNguyen_HelloWorld::subscription"
+                title="Subscriptions"
+                module="VinhNguyen_HelloWorld"
+                sortOrder="70"
+                parent="VinhNguyen_HelloWorld::helloworld"
+                action="helloworld/subscription/"
+                resource="VinhNguyen_HelloWorld::subscription"
+        />
+        <add
+                id="VinhNguyen_HelloWorld::component"
+                title="Components"
+                module="VinhNguyen_HelloWorld"
+                sortOrder="80"
+                parent="VinhNguyen_HelloWorld::helloworld"
+                action="helloworld/component/"
+                resource="VinhNguyen_HelloWorld::helloworld"
+        />
+    </menu>
+</config>

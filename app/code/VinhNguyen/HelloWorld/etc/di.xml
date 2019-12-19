@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--    <type name="Magento\Catalog\Model\Product">-->
+<!--        <plugin name="VinhNguyen_HelloWorld::productName"-->
+<!--                type="VinhNguyen\HelloWorld\Plugin\Catalog\ProductAround" sortOrder="1" />-->
+<!--    </type>-->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="helloWorldCommand" xsi:type="object">VinhNguyen\HelloWorld\Console\Command\HelloWorldCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="helloworld_subscription_listing_data_source" xsi:type="string">VinhNguyen\HelloWorld\Model\ResourceModel\Subscription\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="VinhNguyen\HelloWorld\Model\ResourceModel\Subscription\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">VinhNguyen_helloworld_subscription</argument>
+            <argument name="resourceModel" xsi:type="string">VinhNguyen\HelloWorld\Model\ResourceModel\Subscription</argument>
+        </arguments>
+    </virtualType>
+
+
+</config>
